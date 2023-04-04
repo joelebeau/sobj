@@ -1,0 +1,14 @@
+{
+  "name": "sobj",
+  "version": "0.0.1",
+  "description": "A JavaScript (s)ervice (obj)ect implementation, inspired by Ruby's Subroutine gem",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Joe LeBeau",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
