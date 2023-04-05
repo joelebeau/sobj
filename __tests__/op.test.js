@@ -37,7 +37,7 @@ describe("Op", () => {
       if (this.foo != null) return;
 
       this.addError("foo must be provided");
-    };
+    }
 
     const TestOp = class extends OpFactory({
       fields: ["foo"],
@@ -67,10 +67,12 @@ describe("Op", () => {
       const TestOp2 = class extends OpFactory({
         parent: TestOp,
         fields: ["bar"],
-        validations: [barPresenceValidation]
-      }) {}
+        validations: [barPresenceValidation],
+      }) {};
 
-      expect(() => TestOp2.submit()).toThrow("foo must be provided, bar must be provided");
+      expect(() => TestOp2.submit()).toThrow(
+        "foo must be provided, bar must be provided"
+      );
     });
   });
 
@@ -82,11 +84,13 @@ describe("Op", () => {
       perform() {
         this.output("sum", this.num1 + this.num2);
       }
-    }
+    };
 
     test("outputs can be declared", () => {
-      expect(TestOp.outputs.size).toBe(1)
-      expect(Array.from(TestOp.outputs)).toEqual(expect.arrayContaining(["sum"]));
+      expect(TestOp.outputs.size).toBe(1);
+      expect(Array.from(TestOp.outputs)).toEqual(
+        expect.arrayContaining(["sum"])
+      );
     });
 
     test("outputs are accessible on the instance after perform", () => {
@@ -100,9 +104,11 @@ describe("Op", () => {
           // Redeclare `perform`, but "accidentally" return instead of outputting result;
           return this.num1 + this.num2;
         }
-      }
+      };
 
-      expect(() => BadOp.submit({ num1: 1, num2: 2 })).toThrow("Missing outputs: sum");
+      expect(() => BadOp.submit({ num1: 1, num2: 2 })).toThrow(
+        "Missing outputs: sum"
+      );
     });
   });
 });

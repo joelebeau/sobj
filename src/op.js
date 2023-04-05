@@ -40,7 +40,6 @@ class Op {
     this.outputs[field] = value;
   }
 
-
   // This is to reduce verbosity and ensure that we are only working
   // with valid input fields, rather than working with a raw set of named inputs.
   copyInputsToInstance() {
@@ -61,14 +60,14 @@ class Op {
 
   validateOutputs() {
     const missingOutputs = [];
-    this.constructor.outputs.forEach(output => {
-      if(!(output in this.outputs)) {
+    this.constructor.outputs.forEach((output) => {
+      if (!(output in this.outputs)) {
         missingOutputs.push(output);
       }
     });
 
-    if(missingOutputs.length > 0) {
-      throw new Error(`Missing outputs: ${missingOutputs.join(", ")}`)
+    if (missingOutputs.length > 0) {
+      throw new Error(`Missing outputs: ${missingOutputs.join(", ")}`);
     }
   }
 
