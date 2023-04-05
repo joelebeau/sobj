@@ -51,7 +51,7 @@ op.outputs.baz; // "Hello world"
 
 I got very comfortable with Subroutine's Op style while working in Ruby, but not everything carries over very well from Ruby into JavaScript. We can achieve similar results, but for one, this implementation is building from the ground up whereas the original Ruby implementation is built on top of ActiveModel. This means some concept needs to be engineered from the ground up, though it does afford us some freedom in that regard as well.
 
-There are some major departures from the original implementation, and some minor ones. First, this version uses factories to create new ops to minimize any issues of child classes polluting the static attributes of their parent class.
+There are some major departures from the original implementation, and some minor ones. First, this version uses factories to create new ops to minimize any issues of child classes polluting the static attributes of their parent class. I also opted to have an explicit outputs object to avoid naming collisions with inputs. Other differences will almost certainly arise, apart from the more obvious ergonomic differences due to language differences.
 
 ## Major TODOs
 
