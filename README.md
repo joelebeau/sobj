@@ -41,7 +41,7 @@ op.outputs.baz; // op.baz == "Hello world"
 
 Alternatively we can partially instantiate the op and submit later:
 
-```
+```javascript
 const op = new FooOp({ foo: "Hello" });
 op.submit({ bar: "world" });
 op.outputs.baz; // "Hello world"
