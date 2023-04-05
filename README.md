@@ -10,7 +10,7 @@ This is not a complete implementation at this time, and it may change extensivel
 
 ## Example Usage
 
-```
+```javascript
 const OpFactory = require("sobj");
 
 // Note that we need proper `this` binding, so we cannot use arrow functions for validations.
@@ -34,7 +34,7 @@ class FooOp extends OpFactory({
 
 Usage of this new Op would look like this:
 
-```
+```javascript
 const op = FooOp.submit({ foo: "Hello", bar: "world" });
 op.outputs.baz; // op.baz == "Hello world"
 ```
